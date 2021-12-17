@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&family=Roboto:wght@300&display=swap');
+
+p{
+	font-size: 3vh;
+	color: white;
+	font-family: 'Bakbak One', cursive;
+font-family: 'Roboto', sans-serif;
+}
+
+.container{
+	width: 30%;
+	background-size: cover;
+	border-radius: 10px;
+	box-shadow: 0px 0px 3px 3px rgba(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+.temp{
+	display: inline;
+	margin: 1rem;
+}
+
+.tempContainer{
+	display: flex;
+	justify-content: space-around;
+}
+
+.weather{
+	margin-top: 25%;
+}
+
+.generalInfo{
+	display: inline;
+	font-size: 2vh;
+	margin: 1vw;
+	margin-top: 0.5vw;
+	white-space: nowrap;
+}
+
+.generalInfoContainer{
+display: inline-grid;
+}
+

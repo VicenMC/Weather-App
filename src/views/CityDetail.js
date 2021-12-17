@@ -2,7 +2,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import fetchCityById from "../services/fetchCityById";
 
-function CityDetail({}) {
+function CityDetail() {
   let { id: code } = useParams();
   const [city, setCity] = React.useState();
   React.useEffect(() => {

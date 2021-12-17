@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import Card from "../components/Card.jsx";
 import Cards from "../components/Cards.jsx";
 import SearchBar from "../components/SearchBar.jsx";
+import PrincipalCard from "../components/PrincipalCard.jsx";
 import c from './CitiesPages.module.css';
 
 function CitiesPage({ data, handleOnClose, onSearch }) {
+  console.log(data);
   return (
     <div>
       <div className={c.navBar}>
@@ -15,22 +16,33 @@ function CitiesPage({ data, handleOnClose, onSearch }) {
         </div>
         <SearchBar className={c.searchBar} onSearch={onSearch} />
       </div>
-      <div>
+      <div className={c.principalCardContainer}>
         {data.length > 0 && (
-          <Card 
+          <PrincipalCard
             cityId={data[data.length - 1].id}
-            max={data[data.length - 1].min}
-            min={data[data.length - 1].max}
+            max={data[data.length - 1].max}
+            min={data[data.length - 1].min}
             name={data[data.length - 1].name}
+            clouds={data[data.length - 1].clouds}
+            humidity={data[data.length - 1].humidity}
+            latitud={data[data.length - 1].latitud}
+            longitud={data[data.length - 1].longitud}
+            pressure={data[data.length - 1].pressure}
+            visibility={data[data.length - 1].visibility}
+            weather={data[data.length - 1].weather}
+            weatherDescription={data[data.length - 1].weatherDescription}
+            wind={data[data.length - 1].wind}
+            temp={data[data.length - 1].temp}
             img={data[data.length - 1].img}
+
           />
         )}
       </div>
-      <hr />
-      <div>
+
+      <div className={c.cardsContainer}>
         <Cards cities={data} onClose={handleOnClose} />
       </div>
-      <hr />
+
     </div>
   );
 }

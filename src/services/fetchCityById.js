@@ -1,6 +1,6 @@
 const apiKey = process.env.REACT_APP_APIKEY;
 
-export default function fetchCityById(id, setCity){
+export default function FetchCityById(id, setCity){
 
       fetch(
         `https://api.openweathermap.org/data/2.5/weather?id=${id}&appid=${apiKey}&units=metric`
