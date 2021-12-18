@@ -8,7 +8,7 @@ function CityDetail() {
   React.useEffect(() => {
     fetchCityById(code, setCity);
   }, [code, setCity]);
-  console.log(city);
+
 
   return (
     <div>

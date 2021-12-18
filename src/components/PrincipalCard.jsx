@@ -3,20 +3,23 @@ import s from "./PrincipalCard.module.css";
 
 export default function PrincipalCard(props) {
 	let coverImage='';
-	console.log(props.temp)
-	console.log(typeof(props.temp))
 
-	if(parseInt(props.temp) < 20){
-coverImage = 'https://images.pexels.com/photos/2941985/pexels-photo-2941985.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
-	}else{
-		coverImage = 'https://images.pexels.com/photos/1757363/pexels-photo-1757363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+	if(parseInt(props.temp) < 10){
+coverImage = 'https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260';
+	}else if(parseInt(props.temp) < 20){
+		coverImage = 'https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+	}else if(parseInt(props.temp) < 25){
+		coverImage='https://images.pexels.com/photos/21008/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+	}else if(parseInt(props.temp) >= 25){
+		coverImage = 'https://images.pexels.com/photos/210307/pexels-photo-210307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
 	}
 
 	return (
 		<div className={s.container} style={{backgroundImage:`url(${coverImage})`}}>
-			<p>{props.name}</p>
-			<p>{props.temp}°</p>
-			<img src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="" />
+			<p className={s.name}>{props.name}</p>
+						<img className={s.image} src={`http://openweathermap.org/img/wn/${props.img}@2x.png`} alt="" />
+
+			<p className={s.temperature}>{props.temp}°</p>
 			<p className={s.weather}>Weather: {props.weatherDescription}</p>
 			<div className={s.tempContainers}>
 			<p className={s.temp}>Min: {props.min}°</p>

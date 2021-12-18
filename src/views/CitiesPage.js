@@ -6,7 +6,6 @@ import PrincipalCard from "../components/PrincipalCard.jsx";
 import c from './CitiesPages.module.css';
 
 function CitiesPage({ data, handleOnClose, onSearch }) {
-  console.log(data);
   return (
     <div>
       <div className={c.navBar}>
